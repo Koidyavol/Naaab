@@ -1,0 +1,6 @@
+{
+  "name": "Nara Browser",
+  "description": "Browser Android ringan, cepat, dan aman dengan perlindungan browsing cerdas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
