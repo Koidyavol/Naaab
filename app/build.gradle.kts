@@ -10,12 +10,7 @@ plugins {
 
 android {
     namespace = "com.example"
-
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk { version = release(36) { minorApiLevel = 1 } }
 
     defaultConfig {
         applicationId = "com.aistudio.narabrowser.kzvqlm"
@@ -53,6 +48,7 @@ android {
         }
 
         debug {
+            // Pakai debug keystore bawaan Android
         }
     }
 
@@ -79,7 +75,6 @@ android {
 }
 
 // Configure the Secrets Gradle Plugin to use .env and .env.example files
-// to match the convention used in Web projects.
 secrets {
     propertiesFileName = ".env"
     defaultPropertiesFileName = ".env.example"
@@ -91,7 +86,8 @@ googleServices {
 }
 
 // Some unused dependencies are commented out below instead of being removed.
-// This makes it easy to add them back in the future if needed.
+// This makes it easy to add them back in the future.
+
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(platform(libs.firebase.bom))
@@ -111,6 +107,7 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+
     implementation(libs.androidx.core.ktx)
 
     // implementation(libs.androidx.datastore.preferences)
@@ -131,8 +128,7 @@ dependencies {
     // Uncomment to use Firestore:
     // implementation(libs.firebase.firestore)
 
-    // Uncomment ALL FOUR of the following dependencies together
-    // to use Firebase Auth and Google Sign-In via Credential Manager:
+    // Uncomment ALL FOUR for Firebase Auth and Google Sign-In:
     // implementation(libs.firebase.auth)
     // implementation(libs.androidx.credentials)
     // implementation(libs.androidx.credentials.play.services)
@@ -143,6 +139,7 @@ dependencies {
 
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
+
     implementation(libs.logging.interceptor)
     implementation(libs.moshi.kotlin)
     implementation(libs.okhttp)
